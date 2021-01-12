@@ -13,7 +13,7 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "sane-ddb": "^0.5.3"
+    "sane-ddb": "0.5.4"
   },
   "devDependencies": {
     "@types/node": "^14.14.20",
