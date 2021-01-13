@@ -10,10 +10,10 @@
     "build": "rm -rf lib && tsc -p tsconfig.prod.json",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {
-    "sane-ddb": "0.5.4"
+    "sane-ddb": "0.6.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.20",

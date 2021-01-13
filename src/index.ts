@@ -16,6 +16,7 @@ export default (
       episodeCount: Number,
       artwork: String,
       art: [String],
+      check: String,
     },
     config
   )
