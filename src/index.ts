@@ -21,5 +21,20 @@ export default (
     config
   )
 
-  return { podcasts }
+  const episodes = new DDB(
+    'echo_episodes',
+    {
+      key: ['pId', 'eId'],
+      pId: String,
+      eId: String,
+      url: String,
+      guid: String,
+      published: Number,
+      title: String,
+      shownotes: String,
+    },
+    podcasts.client
+  )
+
+  return { podcasts, episodes }
 }
