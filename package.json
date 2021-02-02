@@ -2,7 +2,7 @@
   "name": "@picast-app/db",
   "description": "DynamoDB clients for Picast",
   "author": "Mathis Bullinger",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "repository": "git://github.com/picast-app/db.git",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
