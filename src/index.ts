@@ -1,4 +1,4 @@
-import { DDB } from 'sane-ddb'
+import { DDB } from 'ddbjs'
 import type * as AWS from 'aws-sdk'
 
 export default (
