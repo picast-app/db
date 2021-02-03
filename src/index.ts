@@ -36,13 +36,17 @@ export default (
     podcasts.client
   )
 
-  const notifications = new DDB('echo_notifications', {
-    key: ['pk', 'sk'],
-    pk: String,
-    sk: String,
-    subs: [String],
-    ttl: Number,
-  })
+  const notifications = new DDB(
+    'echo_notifications',
+    {
+      key: ['pk', 'sk'],
+      pk: String,
+      sk: String,
+      subs: [String],
+      ttl: Number,
+    },
+    podcasts.client
+  )
 
   return { podcasts, episodes, notifications }
 }
