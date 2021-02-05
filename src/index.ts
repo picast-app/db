@@ -15,7 +15,7 @@ export default (
       feed: String,
       episodeCount: Number,
       artwork: String,
-      art: [String],
+      covers: [String],
       check: String,
     },
     config
