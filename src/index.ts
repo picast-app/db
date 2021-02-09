@@ -61,5 +61,12 @@ export default (
     podcasts.client
   )
 
-  return { podcasts, episodes, notifications, parser }
+  const users = new DDB('echo_users', {
+    key: 'id',
+    id: String,
+    user: String,
+    subscriptions: [String],
+  })
+
+  return { podcasts, episodes, notifications, parser, users }
 }
