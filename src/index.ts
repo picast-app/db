@@ -48,5 +48,18 @@ export default (
     podcasts.client
   )
 
-  return { podcasts, episodes, notifications }
+  const parser = new DDB(
+    'echo_podcasts',
+    {
+      key: 'id',
+      id: String,
+      episodes: [String],
+      feed: String,
+      lastParsed: Number,
+      crc: String,
+    },
+    podcasts.client
+  )
+
+  return { podcasts, episodes, notifications, parser }
 }
