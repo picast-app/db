@@ -32,6 +32,7 @@ export default (
       published: Number,
       title: String,
       shownotes: String,
+      firstPass: Boolean,
     },
     podcasts.client
   )
