@@ -68,5 +68,11 @@ export default (
     subscriptions: [String],
   })
 
-  return { podcasts, episodes, notifications, parser, users }
+  const podsubs = new DDB('echo_users', {
+    key: 'id',
+    id: String,
+    subscribers: [String],
+  })
+
+  return { podcasts, episodes, notifications, parser, users, podsubs }
 }
