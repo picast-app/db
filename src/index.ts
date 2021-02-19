@@ -33,6 +33,7 @@ export default (
       title: String,
       shownotes: String,
       firstPass: Boolean,
+      duration: Number,
     },
     podcasts.client
   )
@@ -55,6 +56,7 @@ export default (
       key: 'id',
       id: String,
       episodes: [String],
+      episodeCheck: String,
       feed: String,
       lastParsed: Number,
       crc: String,
