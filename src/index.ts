@@ -17,6 +17,7 @@ export default (
       artwork: String,
       covers: [String],
       check: String,
+      episodeCheck: String,
     },
     config
   )
@@ -56,6 +57,7 @@ export default (
       key: 'id',
       id: String,
       episodes: [String],
+      metaCheck: String,
       episodeCheck: String,
       feed: String,
       lastParsed: Number,
