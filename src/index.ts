@@ -1,6 +1,11 @@
 import { DDB } from 'ddbjs'
 import type * as AWS from 'aws-sdk'
 
+export {
+  encode as verticalEncode,
+  decode as verticalDecode,
+} from './encoding/vertical'
+
 export default (
   config: ConstructorParameters<typeof AWS.DynamoDB.DocumentClient>[0]
 ) => {

@@ -8,7 +8,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.prod.json",
-    "test": "jest --config jestconfig.json",
+    "test": "npm run build && node __tests__/encode.js",
     "prepare": "npm run build",
     "postversion": "git push --follow-tags"
   },
