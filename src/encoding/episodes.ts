@@ -1,10 +1,15 @@
+import { crc32 } from 'crc'
+
+export const hashIds = (ids: string[]): string =>
+  crc32(ids.join('')).toString(36)
+
 // ENCODING SCHEME:
 // iterate over columns left-to-right, top-to-bottom
 // if token[column] (substitute _ for missing) repeats more than thrice append as
 // .<repeats in hex>.<char>
 // otherwise append <char>
 
-export const encode = (ids: string[]): string => {
+export const encodeIds = (ids: string[]): string => {
   const encoded = []
   for (let i = 0; i < Math.max(...ids.map((id) => id.length)); i++) {
     const column = []
@@ -27,7 +32,7 @@ export const encode = (ids: string[]): string => {
   return encoded.join(',')
 }
 
-export const decode = (encoded: string): string[] => {
+export const decodeIds = (encoded: string): string[] => {
   const tokens = []
 
   for (const column of encoded.split(',')) {

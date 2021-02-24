@@ -1,8 +1,11 @@
 const ids = require('./ids')
-const { encode, decode } = require('../lib/encoding/vertical')
+const { encodeIds, decodeIds, hashIds } = require('../lib/encoding/episodes')
 
-const encoded = encode(ids)
-const decoded = decode(encoded)
+if (hashIds(ids) !== 'rd09pl') throw Error('incorrect crc ' + hashIds(ids))
+else console.log('crc matches')
+
+const encoded = encodeIds(ids)
+const decoded = decodeIds(encoded)
 
 const matches = (a, b) =>
   a.length !== b.length ? false : a.every((v, i) => v === b[i])
