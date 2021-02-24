@@ -1,7 +1,7 @@
 import { crc32 } from 'crc'
 
 export const hashIds = (ids: string[]): string =>
-  crc32(ids.join('')).toString(36)
+  crc32(ids.sort().join('')).toString(36)
 
 // ENCODING SCHEME:
 // iterate over columns left-to-right, top-to-bottom
