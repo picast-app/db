@@ -75,6 +75,7 @@ export default (
       id: String,
       user: String,
       subscriptions: [String],
+      current: { podcast: String, episode: String, position: Number },
     },
     podcasts.client
   )
@@ -89,5 +90,18 @@ export default (
     podcasts.client
   )
 
-  return { podcasts, episodes, notifications, parser, users, podsubs }
+  const playback = new DDB(
+    'echo_playback',
+    {
+      key: ['pk', 'sk'],
+      pk: String,
+      sk: String,
+      position: Number,
+      progress: Number,
+      lastUpdate: Number,
+    },
+    podcasts.client
+  )
+
+  return { podcasts, episodes, notifications, parser, users, podsubs, playback }
 }
