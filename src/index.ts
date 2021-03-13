@@ -103,5 +103,20 @@ export default (
     podcasts.client
   )
 
-  return { podcasts, episodes, notifications, parser, users, podsubs, playback }
+  const locks = new DDB(
+    'echo_locks',
+    { key: 'id', id: String, ttl: Number },
+    podcasts.client
+  )
+
+  return {
+    podcasts,
+    episodes,
+    notifications,
+    parser,
+    users,
+    podsubs,
+    playback,
+    locks,
+  }
 }
