@@ -48,6 +48,7 @@ export default (
       pk: String,
       sk: String,
       subs: [String],
+      user: String,
       ttl: Number,
     },
     podcasts.client
@@ -86,6 +87,7 @@ export default (
       key: 'id',
       id: String,
       subscribers: [String],
+      wpSubs: [String],
     },
     podcasts.client
   )
