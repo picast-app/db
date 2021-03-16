@@ -76,6 +76,7 @@ export default (
       id: String,
       user: String,
       subscriptions: [String],
+      wpSubs: [String],
       current: { podcast: String, episode: String, position: Number },
     },
     podcasts.client
@@ -111,6 +112,20 @@ export default (
     podcasts.client
   )
 
+  const websub = new DDB(
+    'echo_websub',
+    {
+      key: 'podcast',
+      podcast: String,
+      hub: String,
+      topic: String,
+      callback: String,
+      status: String,
+      ttl: Number,
+    },
+    podcasts.client
+  )
+
   return {
     podcasts,
     episodes,
@@ -120,5 +135,6 @@ export default (
     podsubs,
     playback,
     locks,
+    websub,
   }
 }
