@@ -121,6 +121,10 @@ export default (
       topic: String,
       callback: String,
       status: String,
+      secret: String,
+      requested: Number,
+      issued: Number,
+      expires: Number,
       ttl: Number,
     },
     podcasts.client
