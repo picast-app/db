@@ -65,6 +65,10 @@ export default (
       feed: String,
       lastParsed: Number,
       crc: String,
+      websub: {
+        hub: String,
+        self: String,
+      },
     },
     podcasts.client
   )
