@@ -7,6 +7,7 @@ const metaKeys = [
   'description',
   'subtitle',
   'artwork',
+  'palette',
 ]
 
 export const check = (meta: any) =>
