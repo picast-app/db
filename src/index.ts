@@ -2,6 +2,7 @@ import { DDB } from 'ddbjs'
 import type * as AWS from 'aws-sdk'
 
 export * as episodes from './encoding/episodes'
+export * as meta from './encoding/meta'
 
 export default (
   config: ConstructorParameters<typeof AWS.DynamoDB.DocumentClient>[0]
@@ -20,6 +21,14 @@ export default (
       covers: [String],
       check: String,
       episodeCheck: String,
+      palette: {
+        vibrant: String,
+        darkVibrant: String,
+        lightVibrant: String,
+        muted: String,
+        darkMuted: String,
+        lightMuted: String,
+      },
     },
     config
   )
