@@ -78,6 +78,8 @@ export default (
         hub: String,
         self: String,
       },
+      lastModified: String,
+      lastChecked: String,
     },
     podcasts.client
   )
@@ -138,6 +140,7 @@ export default (
       requested: Number,
       issued: Number,
       expires: Number,
+      attempts: Number,
       ttl: Number,
     },
     podcasts.client
