@@ -85,6 +85,7 @@ export default (
       lastChecked: String,
       // last time feed was modifed (according to last-modified response header)
       lastModified: String,
+      etag: String,
     },
     podcasts.client
   )
