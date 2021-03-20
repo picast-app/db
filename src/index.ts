@@ -86,6 +86,7 @@ export default (
       // last time feed was modifed (according to last-modified response header)
       lastModified: String,
       etag: String,
+      cacheHeaders: { lastModified: Boolean, etag: Boolean },
     },
     podcasts.client
   )
