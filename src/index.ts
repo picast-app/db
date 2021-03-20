@@ -78,8 +78,13 @@ export default (
         hub: String,
         self: String,
       },
-      lastModified: String,
+      /* dates all in rfc7231 (.toUTCString()) */
+      // last time feed was requested
+      lastRequested: String,
+      // last time response was updated (according to date response header)
       lastChecked: String,
+      // last time feed was modifed (according to last-modified response header)
+      lastModified: String,
     },
     podcasts.client
   )
