@@ -4,6 +4,8 @@ import type * as AWS from 'aws-sdk'
 export * as episodes from './encoding/episodes'
 export * as meta from './encoding/meta'
 
+// all dates should be stored in ISO 8601 (JS .toISOString())
+
 export default (
   config: ConstructorParameters<typeof AWS.DynamoDB.DocumentClient>[0]
 ) => {
@@ -19,7 +21,7 @@ export default (
       episodeCount: Number,
       artwork: String,
       covers: [String],
-      check: String,
+      metaCheck: String,
       episodeCheck: String,
       palette: {
         vibrant: String,
@@ -41,7 +43,7 @@ export default (
       eId: String,
       url: String,
       guid: String,
-      published: Number,
+      published: String,
       title: String,
       shownotes: String,
       firstPass: Boolean,
@@ -72,19 +74,18 @@ export default (
       metaCheck: String,
       episodeCheck: String,
       feed: String,
-      lastParsed: Number,
       crc: String,
       websub: {
         hub: String,
         self: String,
       },
-      /* dates all in rfc7231 (.toUTCString()) */
       // last time feed was requested
       lastRequested: String,
       // last time response was updated (according to date response header)
       lastChecked: String,
       // last time feed was modifed (according to last-modified response header)
       lastModified: String,
+      lastParsed: String,
       etag: String,
       cacheHeaders: { lastModified: Boolean, etag: Boolean },
     },
