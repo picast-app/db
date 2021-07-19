@@ -101,6 +101,7 @@ export default (
       subscriptions: [String],
       wpSubs: [String],
       current: { podcast: String, episode: String, position: Number },
+      roles: [String],
     },
     podcasts.client
   )
@@ -124,7 +125,7 @@ export default (
       sk: String,
       position: Number,
       progress: Number,
-      lastUpdate: Number,
+      lastUpdate: String,
     },
     podcasts.client
   )
@@ -145,9 +146,9 @@ export default (
       callback: String,
       status: String,
       secret: String,
-      requested: Number,
-      issued: Number,
-      expires: Number,
+      requested: String,
+      issued: String,
+      expires: String,
       attempts: Number,
       ttl: Number,
     },
