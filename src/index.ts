@@ -1,4 +1,4 @@
-import { DDB } from 'ddbjs'
+import { DDB, DDBKey } from 'ddbjs'
 import type * as AWS from 'aws-sdk'
 
 export * as episodes from './encoding/episodes'
@@ -12,7 +12,7 @@ export default (
   const podcasts = new DDB(
     'echo_podcasts',
     {
-      key: 'id',
+      [DDBKey]: 'id',
       id: String,
       title: String,
       author: String,
@@ -38,7 +38,7 @@ export default (
   const episodes = new DDB(
     'echo_episodes',
     {
-      key: ['pId', 'eId'],
+      [DDBKey]: ['pId', 'eId'],
       pId: String,
       eId: String,
       url: String,
@@ -55,7 +55,7 @@ export default (
   const notifications = new DDB(
     'echo_notifications',
     {
-      key: ['pk', 'sk'],
+      [DDBKey]: ['pk', 'sk'],
       pk: String,
       sk: String,
       subs: [String],
@@ -68,7 +68,7 @@ export default (
   const parser = new DDB(
     'echo_podcasts',
     {
-      key: 'id',
+      [DDBKey]: 'id',
       id: String,
       episodes: [String],
       metaCheck: String,
@@ -95,7 +95,7 @@ export default (
   const users = new DDB(
     'echo_users',
     {
-      key: 'id',
+      [DDBKey]: 'id',
       id: String,
       user: String,
       subscriptions: [String],
@@ -109,7 +109,7 @@ export default (
   const podsubs = new DDB(
     'echo_users',
     {
-      key: 'id',
+      [DDBKey]: 'id',
       id: String,
       subscribers: [String],
       wpSubs: [String],
@@ -120,7 +120,7 @@ export default (
   const playback = new DDB(
     'echo_playback',
     {
-      key: ['pk', 'sk'],
+      [DDBKey]: ['pk', 'sk'],
       pk: String,
       sk: String,
       position: Number,
@@ -132,14 +132,14 @@ export default (
 
   const locks = new DDB(
     'echo_locks',
-    { key: 'id', id: String, ttl: Number },
+    { [DDBKey]: 'id', id: String, ttl: Number },
     podcasts.client
   )
 
   const websub = new DDB(
     'echo_websub',
     {
-      key: 'podcast',
+      [DDBKey]: 'podcast',
       podcast: String,
       hub: String,
       topic: String,

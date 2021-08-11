@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "crc": "^3.8.0",
-    "ddbjs": "*"
+    "ddbjs": "^0.16.0"
   },
   "devDependencies": {
     "@types/crc": "^3.4.0",
