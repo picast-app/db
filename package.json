@@ -13,8 +13,10 @@
     "postversion": "git push --follow-tags"
   },
   "dependencies": {
-    "crc": "^3.8.0",
-    "ddbjs": "^0.16.0"
+    "crc": "^3.8.0"
+  },
+  "peerDependencies": {
+    "ddbjs": "0.x"
   },
   "devDependencies": {
     "@types/crc": "^3.4.0",
